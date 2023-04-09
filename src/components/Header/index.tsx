@@ -1,11 +1,16 @@
-
-import React, { useState, useEffect } from 'react';
-import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from "react-icons/md";
-import {GiSpiderMask} from 'react-icons/gi'
+import { useContext, useState } from 'react';
+import { AuthContext } from '../../context/user.context'
+import {
+  MdOutlineKeyboardArrowDown,
+  MdOutlineKeyboardArrowUp,
+} from "react-icons/md";
+import { GiSpiderMask } from "react-icons/gi";
+import ModalHeader from '../ModalHeader/index'
 import "./header.scss";
 
 function Header() {
-    const [active, setActive] = useState<boolean>(false);
+    const { user } = useContext(AuthContext);
+  const [active, setActive] = useState<boolean>(false);
   const linkInfo = [
     {
       title: "SHIFT",
@@ -23,61 +28,38 @@ function Header() {
       title: "HISTORY",
       href: "/",
     },
-  ]
-
+  ];
 
   return (
+    <>
     <header className="header">
       <div className="section-left">
-          <div className="logo" >
-          </div>
-    </div>
+        <div className="logo"></div>
+      </div>
       <div className="section-center">
-      <div className="nav">
+        <div className="nav">
           {linkInfo.map((item, index) => (
             <div key={index}>
-              <a href={item.href} >
-                {item.title}
-              </a>
+              <a href={item.href}>{item.title}</a>
             </div>
           ))}
         </div>
       </div>
-      
-        <div className="section-right">
-          <div>
-            <div className="user-profile-dropdown">
-              <ul className="profile-wrapper">
-                <li>
-                  <div className="profile">
-                    {/* <span className="profile-text">
-                      <Icon
-                        className="dropdown-indicator"
-                        icon="users"
-                      />
-                    </span> */}
-                    <GiSpiderMask />
-                      <p style={{ textTransform: "capitalize" }}>
-                      86X7ZAdjHt
-                      </p>
-                    <MdOutlineKeyboardArrowDown
-                      className="dropdown-indicator"
-                    />
-                    <ul className="menu">
-                      <li>
-                        <a>
-                          <span>Logout</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
 
+      <div className="section-right">
+        <div className="profile" onClick={() =>{setActive(!active)}}>
+          <GiSpiderMask />
+          <p className="account">{user ? user?.id : '86X7ZAdjHt'}</p>
+          {
+              active ? <MdOutlineKeyboardArrowUp className="indicator" /> : 
+              <MdOutlineKeyboardArrowDown className="indicator" />
+               
+            }
+        </div>
+            <ModalHeader active={active} setActive={setActive} user={user} />
+      </div>
     </header>
+    </>
   );
 }
 

@@ -1,29 +1,26 @@
-
 .header {
   background-color: rgb(17 11 11);
   display: flex;
   justify-content: space-around;
   align-items: center;
   max-height: 48px;
-  padding: 9px 34px 8px 19px;
+  padding: 8px 16px;
   width: 100%;
-
 
   .section-left {
     min-width: 72px;
-        height: 48px;
-    .logo{
-        min-width: 200px;
-        height: 48px;
-        background-image: url(../../../public/images/sideShiftLogo.png);
-        background-size: cover;
-        background-position: center;
-        cursor: pointer;
-        // background-image: ;
+    height: 48px;
+    .logo {
+      min-width: 200px;
+      height: 100%;
+      background-image: url(../../../public/images/sideShiftLogo.png);
+      background-size: cover;
+      background-position: center;
+      cursor: pointer;
+      // background-image: ;
     }
-    
-}
-.section-center{
+  }
+  .section-center {
     .nav {
       display: flex;
       justify-content: flex-start;
@@ -31,104 +28,120 @@
       color: white;
       font-weight: 300;
       gap: 56px;
-    
+
       a {
         display: flex;
         text-decoration: none;
-    color: white;
+        color: white;
       }
-    } 
+    }
   }
   .section-right {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    color: rgb(255 255 255);
-    border: solid white 1px;
-  }
-  .user-profile-dropdown {
-    ul,
-    li {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      font-family: 'Outfit', sans-serif;
-    }
-    .profile-wrapper {
-      width: 173px;
-      position: relative;
-    }
+    color: white;
+    border: solid rgb(94, 92, 92) 2px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 16px;
+    width: 183px;
+    cursor: pointer;
+
     .profile {
-      align-items: center;
-      border-radius: 19px;
-      display: flex;
-      font-family: 'Outfit', sans-serif;
-      font-weight: 300;
-      justify-content: space-between;
-      position: relative;
-      right: 20px;
-      padding: 9px;
-      height: 40px;
-      width: 213px;
-    }
-    .profile:hover {
-      cursor: pointer;
-    }
-    .profile .name {
-      line-height: 26px;
-      margin-left: 10px;
-    }
-
-    .profile-icon {
-      width: 26px;
-      height: 26px;
-      display: inline;
-      float: left;
-      border-radius: 13px;
-      box-shadow: 0 0 3px rgba(0, 0, 0, 0.5) inset;
-    }
-    .profile-text {
-      width: 30px;
-      height: 30px;
-      display: inline;
-      padding: 5px 8px;
-      margin-right: 10px;
-      font-size: 18px;
-      font-family: 'Outfit', sans-serif;
-      text-transform: uppercase;
-      border-radius: 50%;
-    }
-
-    /* hide menu */
-    .menu {
-      display: none;
-      clear: both;
-      margin: 20px 0 0 0;
-    }
-    .menu li {
-      font-size: 14px;
-      margin: 0;
+        width: 100%;
+        max-height: 30px;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
 
     }
-    .menu li a {
-      width: 213px;
-      display: block;
-      padding: 10px 4px;
-      border-radius: 10px;
-    }
-    .menu li:hover > a {
-      display: block;
-      width: 213px;
-      padding: 10px 4px;
-    }
-    .profile:hover .menu {
-      padding: 5px;
-      z-index: 9999;
-      display: block;
-      position: absolute;
-      left: 0;
-      top: 19px;
-      border-radius: 10px;
+    .indicator{
+        font-size: 30px;
     }
   }
+  //   .user-profile-dropdown {
+  //     ul,
+  //     li {
+  //       list-style: none;
+  //       padding: 0;
+  //       margin: 0;
+  //       font-family: 'Outfit', sans-serif;
+  //     }
+  //     .profile-wrapper {
+  //       width: 173px;
+  //       position: relative;
+  //     }
+  //     .profile {
+  //       align-items: center;
+  //       border-radius: 19px;
+  //       display: flex;
+  //       font-family: 'Outfit', sans-serif;
+  //       font-weight: 300;
+  //       justify-content: space-between;
+  //       position: relative;
+  //       right: 20px;
+  //       padding: 9px;
+  //       height: 40px;
+  //       width: 213px;
+  //     }
+  //     .profile:hover {
+  //       cursor: pointer;
+  //     }
+  //     .profile .name {
+  //       line-height: 26px;
+  //       margin-left: 10px;
+  //     }
+
+  //     .profile-icon {
+  //       width: 26px;
+  //       height: 26px;
+  //       display: inline;
+  //       float: left;
+  //       border-radius: 13px;
+  //       box-shadow: 0 0 3px rgba(0, 0, 0, 0.5) inset;
+  //     }
+  //     .profile-text {
+  //       width: 30px;
+  //       height: 30px;
+  //       display: inline;
+  //       padding: 5px 8px;
+  //       margin-right: 10px;
+  //       font-size: 18px;
+  //       font-family: 'Outfit', sans-serif;
+  //       text-transform: uppercase;
+  //       border-radius: 50%;
+  //     }
+
+  //     /* hide menu */
+  //     .menu {
+  //       display: none;
+  //       clear: both;
+  //       margin: 20px 0 0 0;
+  //     }
+  //     .menu li {
+  //       font-size: 14px;
+  //       margin: 0;
+
+  //     }
+  //     .menu li a {
+  //       width: 213px;
+  //       display: block;
+  //       padding: 10px 4px;
+  //       border-radius: 10px;
+  //     }
+  //     .menu li:hover > a {
+  //       display: block;
+  //       width: 213px;
+  //       padding: 10px 4px;
+  //     }
+  //     .profile:hover .menu {
+  //       padding: 5px;
+  //       z-index: 9999;
+  //       display: block;
+  //       position: absolute;
+  //       left: 0;
+  //       top: 19px;
+  //       border-radius: 10px;
+  //     }
+  //   }
 }
