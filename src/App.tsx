@@ -1,10 +1,9 @@
-import CoinList from './Components/CoinList/CoinList';
+import MainPage from './flows/MainPage';
 
 function App() {
   return (
     <div>
-      <h1>Coin List</h1>
-      <CoinList />
+      <MainPage />
     </div>
   );
 }
